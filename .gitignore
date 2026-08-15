@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# エディタ
+.vscode/
+*.swp
+
+# 一時ファイル
+*.log
