@@ -184,7 +184,7 @@ Day 8（初めてのJS）と Day 14（レスポンシブ）は、細切れの時
 | ×| 4 | **デザイントークン**。配色を決め `:root` に色・フォント・余白を変数化 | `--c-*` `--sp-*` が10個ほど | `style.css` 01 |
 | ×| 5 | リセットCSSとベース。`box-sizing`、画像、行間、`.container` | 文字が読みやすく中央に収まる | `style.css` 02 |
 | ×| 6 | ヘッダー（スマホ幅のみ）。ロゴ＋ハンバーガー、`position: fixed` | スクロールしても付いてくる | `index.html:74-101` |
-| | 7 | ドロワーのHTML/CSS。**GitHubにpush** | GitHubに自分のコードが見える | `index.html:103-130` |
+| ×| 7 | ドロワーのHTML/CSS。**GitHubにpush** | GitHubに自分のコードが見える | `index.html:103-130` |
 
 ## Week 2 — トップページを完成させる
 
