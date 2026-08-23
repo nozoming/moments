@@ -30,7 +30,8 @@
   --wrap: 1240px;
   --wrap-wide: 1560PX;
   --wrap-narrow: 820px;
-
+  /*--ヘッダ高さ------*/
+  --header-h: 60px;
 
 }
 .container {
@@ -66,4 +67,15 @@ header {
   left: 0;
   right: 0;
   background-color: var(--c-paper);
+  height: var(--header-h);
 }
+#drawer {
+  display: none; 
+}
+#drawer.is-open {
+  display: block;
+}
+main {
+  margin-top: var(--header-h);
+}
+  
