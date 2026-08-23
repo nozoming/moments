@@ -1,0 +1,30 @@
+:root {
+  --c-ink: #060913;
+  --c-ink-soft: #0e162f;
+  --c-ink-line: rgba(235, 237, 244, 0.14);
+  --c-paper: #ebedf4;
+  --c-paper-dim: #e0e2e9;
+  --c-paper-line: rgba(6, 9, 19, 0.12);
+
+  --c-accent: #4ac3d3;
+  --c-accent-bright: #5cecff;
+  --c-accent-dark: hsl(189, 48%, 25%);
+
+  --c-on-dark: #ebedf4;
+  --c-on-dark-mute: rgba(235, 237, 244, 0.62);
+  --c-on-light: #060913;
+  --c-on-light-mute: rgba(6, 9, 19, 0.6);
+
+  --f-display: "Jost", "Noto Sans JP", "Hiragino Sans", sans-serif;
+/*--余白-------*/
+ --sp-1: 0.25rem;
+ --sp-2: 0.5rem;
+ --sp-3: 0.75rem;
+ --sp-4: 1rem;
+ --sp-5: 1.25rem;
+ --sp-6: 1.5rem;
+ --sp-7: 2rem;
+ --sp-8: 3rem;
+ --sp-9: 4rem; 
+
+}
