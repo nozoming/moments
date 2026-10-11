@@ -76,6 +76,7 @@ header {
   display: block;
 }
 main {
+  /*余白どうしがくっつく困ったらpadding*/
   margin-top: var(--header-h);
 }
   
