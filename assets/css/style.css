@@ -67,10 +67,11 @@ header {
   left: 0;
   right: 0;
   background-color: var(--c-paper);
-  height: var(--header-h);
+  min-height: var(--header-h);
 }
 #drawer {
   display: none; 
+  background-color: var(--c-paper);
 }
 #drawer.is-open {
   display: block;
