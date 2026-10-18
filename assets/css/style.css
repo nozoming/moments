@@ -75,7 +75,6 @@ header {
   left: 0;
   right: 0;
   background-color: var(--c-ink);
-  min-height: var(--header-h);
 }
 #drawer {
   display: none; 
@@ -91,4 +90,7 @@ main {
 .header-bar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  min-height: var(--header-h);
+  padding-inline: var(--sp-6);
 }  
