@@ -34,7 +34,7 @@
   --wrap-wide: 1560PX;
   --wrap-narrow: 820px;
   /*--ヘッダ高さ------*/
-  --header-h: 60px;
+  --header-h: 72px;
 
 }
 .container {
@@ -113,7 +113,7 @@ main {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(180deg, rgb(18 16 14 / 13%) 0%, rgb(18 16 14 / 0%) 38%, rgb(18 16 14 / 60%));
+  background-image: linear-gradient(311deg, rgb(18 16 14 / 13%) 0%, rgb(18 16 14 / 0%) 38%, rgb(18 16 14 / 60%));
   
 }
 .hero img {
@@ -128,11 +128,12 @@ main {
 }
 .hero-text {
   position: absolute; 
+  top: var(--sp-10);
   bottom: var(--sp-10);
   left: var(--sp-6);
   display: flex;
   flex-direction: column;
-  gap: var(--sp-3);
+  gap: var(--sp-1);
   right: var(--sp-6);
 }
 .hero-text p {
@@ -164,7 +165,23 @@ main {
   color: var(--c-ink);
 }
 .btn-secondary {
-
+  background-color: rgb(18 16 14 / 40%);
   border: 1px solid rgb(247 244 239 / 55%);
   color: var(--c-on-dark);
+}
+.hero-scroll {
+  margin: 0;
+  position: absolute;
+  bottom: var(--sp-6);
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--c-accent);
+  font-family: var(--f-label);
+  font-size: 0.625rem;
+  letter-spacing: 0.3em;
+}
+.hero-text .btn-primary {
+   margin-top: auto;
+   margin-bottom: var(--sp-2);
 }
