@@ -109,6 +109,15 @@ main {
   letter-spacing: 0.08em;
   line-height: 1.85; 
 }
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(180deg, rgb(18 16 14 / 13%) 0%, rgb(18 16 14 / 0%) 38%, rgb(18 16 14 / 60%));
+  
+}
 .hero img {
   position: absolute;
   top: 0;
