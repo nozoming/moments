@@ -81,6 +81,8 @@ header {
 #drawer {
   display: none; 
   background-color: var(--c-ink);
+  padding-inline: var(--sp-6);
+  padding-block: var(--sp-7);
 }
 #drawer.is-open {
   display: block;
@@ -203,4 +205,9 @@ main {
   width: 24px;
   height: 1px;
   background-color: var(--c-on-dark);
+}
+#drawer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
