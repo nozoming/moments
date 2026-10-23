@@ -49,7 +49,7 @@
 *::after {
   box-sizing: border-box;
 }
-h1,h2,h3,p,ul {
+h1,h2,h3,p,ul,figure {
   margin: 0;
 }
 h1,h2,h3 {
@@ -256,4 +256,16 @@ main {
   font-size: 1.3rem;
   margin-bottom: var(--sp-2);
   
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-3);
+}
+figcaption {
+  font-family: var(--f-caption);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  color: var(--c-on-dark-mute);
+  margin-top: var(--sp-3);
 }
