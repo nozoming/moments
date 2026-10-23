@@ -76,6 +76,7 @@ header {
   left: 0;
   right: 0;
   background-color: var(--c-ink);
+  z-index: 10;
 }
 #drawer {
   display: none; 
