@@ -162,6 +162,7 @@ main {
   justify-content: center;
   font-size: 0.875rem;
   letter-spacing: 0.16em; 
+ 
 }
 .btn-primary {
   background-color: var(--c-accent);
@@ -244,6 +245,7 @@ main {
   font-size: 0.8125rem;
   line-height: 2.1;
   letter-spacing: 0.04em;
+  
 }
 .section-text {
   display: flex;
@@ -269,3 +271,16 @@ figcaption {
   color: var(--c-on-dark-mute);
   margin-top: var(--sp-3);
 }
+.photo-grid img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+.section-text .lead {
+  margin-bottom: var(--sp-6);
+}
+.section-text .btn {
+  margin-top: var(--sp-4);
+}
+.section-text > :last-child { 
+  margin-bottom: 0; }
