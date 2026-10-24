@@ -4,6 +4,7 @@
   --c-ink-line: rgba(247, 244, 239, 0.14);
   --c-paper: #F7F4EF;
   --c-paper-line: rgba(18, 16, 14, 0.12);
+  --c-surface: #ffffff;
 
   --c-accent: #C2A268;
   --c-accent-dark: #7F6229;
@@ -283,4 +284,45 @@ figcaption {
   margin-top: var(--sp-4);
 }
 .section-text > :last-child { 
-  margin-bottom: 0; }
+  margin-bottom: 0; 
+}
+.section-light {
+  background-color: var(--c-paper);
+  color: var(--c-on-light);
+} 
+.section-light .label {
+  color: var(--c-accent-dark);
+} 
+.plan article {
+  background-color: var(--c-surface);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-3);
+  padding-block: var(--sp-6);
+  padding-inline: var(--sp-6);
+  border: 1px solid var(--c-paper-line);
+}
+.plan {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+.plan-name {
+  font-weight: 500;
+  font-size: 0.9375rem;
+  letter-spacing: 0.08em;
+}
+.plan-price {
+  font-family: var(--f-label);
+  font-size: 1.75rem;
+}
+.plan-tax {
+  font-family: var(--f-body);
+  font-size: 0.75rem;
+}
+.plan-text {
+  font-family: var(--f-caption);
+  font-size: 0.75rem;
+  color: var(--c-on-light-mute);
+  line-height: 2;
+}
