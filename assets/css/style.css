@@ -335,3 +335,32 @@ figcaption {
   background-color: var(--c-ink);
   color: var(--c-on-dark);
 }
+.voice {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+}
+.voice article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.voice img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
+.voice-title {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.voice-text {
+  font-size: 0.8125rem;
+  line-height: 2;
+  color: var(--c-on-dark-mute);
+}
+.voice-guest,.note {
+  font-family: var(--f-caption); 
+  font-size: 0.6875rem;
+  color: var(--c-on-dark-mute);
+}

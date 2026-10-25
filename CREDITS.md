@@ -33,7 +33,7 @@
 | `emilio-garcia-Yx_khCZyX8g-unsplash.jpg` | Unsplash | emilio-garcia | |
 | `erik-mclean-oKOF1j19bfg-unsplash.jpg` | Unsplash | erik-mclean | |
 | `foto-pettine-IfjHaIoAoqE-unsplash.jpg` | Unsplash | foto-pettine | |
-| `fotografo-samuel-cruz-LRf0Uhnwsp8-unsplash.jpg` | Unsplash | fotografo-samuel-cruz | |
+| `fotografo-samuel-cruz-LRf0Uhnwsp8-unsplash.jpg` | Unsplash | fotografo-samuel-cruz | トップ VOICE |
 | `grace-tetley-7gQn6W3r4eY-unsplash.jpg` | Unsplash | grace-tetley | |
 | `grace-tetley-LmCU4zKnhfM-unsplash.jpg` | Unsplash | grace-tetley | |
 | `grace-tetley-OU84yB9PoCc-unsplash.jpg` | Unsplash | grace-tetley | |
@@ -48,7 +48,7 @@
 | `jonathan-borba-lAYQfuAVJxI-unsplash.jpg` | Unsplash | jonathan-borba | |
 | `kevin-hernandez-reyes-QA1VeK4y_6Y-unsplash.jpg` | Unsplash | kevin-hernandez-reyes | トップ GALLERY |
 | `kristina-delp-IXtFbm_C_TE-unsplash.jpg` | Unsplash | kristina-delp | |
-| `laura-van-den-boogaart-41ygxd_oLYQ-unsplash.jpg` | Unsplash | laura-van-den-boogaart | |
+| `laura-van-den-boogaart-41ygxd_oLYQ-unsplash.jpg` | Unsplash | laura-van-den-boogaart | トップ VOICE |
 | `marek-okon-WScpndZFrOM-unsplash.jpg` | Unsplash | marek-okon | |
 | `marlon-schmeiski-5fBuG1_4KU4-unsplash.jpg` | Unsplash | marlon-schmeiski | |
 | `matteo-raw-IGw-EIurw6M-unsplash.jpg` | Unsplash | matteo-raw | |
