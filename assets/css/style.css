@@ -445,3 +445,42 @@ footer small {
   line-height: 1.9;
   color: var(--c-on-dark-mute);
 }
+@media (min-width: 1280px) { 
+  #drawer-toggle {
+    display: none;
+  } 
+  #drawer {
+    display: flex; 
+    gap: var(--sp-7);
+    padding-block: 0;
+    align-items: center;
+  }
+  #drawer address {
+    display: none;
+  }
+  #drawer .sns {
+    display: none;
+  }
+  .drawer-menu {
+    display: flex;
+    gap: var(--sp-7);
+  }
+  .drw-ja {
+    display: none;
+  }
+  .drawer-menu li {
+    border-bottom: none;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #drawer .btn {
+    margin-top: 0;
+}
+  :root {
+    --header-h:88px;
+
+}
+}
