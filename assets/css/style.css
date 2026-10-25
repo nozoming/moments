@@ -102,8 +102,25 @@ header {
   padding-block: var(--sp-7);
 }
 #drawer.is-open {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100svh - var(--header-h));
 }
+#drawer.is-open address {
+  margin-top: auto;
+}
+#drawer.is-open .sns {
+  margin-top: var(--sp-5);
+} 
+#drawer-toggle[aria-expanded="true"] span:nth-child(2) { 
+  opacity: 0;
+ }
+#drawer-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+ }
+#drawer-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+ }
 main {
   /*余白どうしがくっつく困ったらpadding*/
   margin-top: var(--header-h);
@@ -235,13 +252,13 @@ main {
   letter-spacing: 0.08em;
   color: var(--c-on-dark-mute);
 }
-#drawer ul a {
+.drawer-menu a {
   display: flex;
   gap: var(--sp-3);
   padding-block: var(--sp-4);
   align-items: baseline;
 }
-#drawer li {
+.drawer-menu li {
   border-bottom: 1px solid var(--c-ink-line);
 }
 #drawer .btn {
