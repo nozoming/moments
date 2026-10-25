@@ -1,18 +1,23 @@
 :root {
-  --c-ink: #12100E;
-  --c-ink-soft: #4A4160;
-  --c-ink-line: rgba(247, 244, 239, 0.14);
-  --c-paper: #F7F4EF;
-  --c-paper-line: rgba(18, 16, 14, 0.12);
-  --c-surface: #ffffff;
+  /*--色の見分け方-------
+    面 = 画材の名前だけ（ink / paper / surface）→ background-color に使う
+    文字 = on-〇〇「〇〇の面の上に乗る文字」→ color に使う
+    線 = 〇〇-line「〇〇の面の上に引く線」→ border に使う
+    on は「〜の上に」と読む。中身は面と反対の明るさ */
+  --c-ink: #12100E;         /* 面：黒（基調の暗い面） */
+  --c-ink-soft: #4A4160;    /* 面：dusk 紫がかった暗い面。文字には使わない */
+  --c-ink-line: rgba(247, 244, 239, 0.14); /* 線：暗い面の上に引く線（中身は明るい） */
+  --c-paper: #F7F4EF;       /* 面：明るい面（オフホワイト） */
+  --c-paper-line: rgba(18, 16, 14, 0.12);  /* 線：明るい面の上に引く線（中身は暗い） */
+  --c-surface: #ffffff;     /* 面：白いカード。paper の上に一段浮いた面 */
 
-  --c-accent: #C2A268;
-  --c-accent-dark: #7F6229;
+  --c-accent: #C2A268;      /* 金：暗い面の上だけ。明るい面の上では読めない */
+  --c-accent-dark: #7F6229; /* 濃い金：明るい面の上で使う金 */
 
-  --c-on-dark: #F7F4EF;
-  --c-on-dark-mute: rgba(247, 244, 239, 0.62);
-  --c-on-light: #12100E;
-  --c-on-light-mute: rgba(18, 16, 14, 0.6);
+  --c-on-dark: #F7F4EF;     /* 文字：暗い面の上に乗る文字（中身は明るい） */
+  --c-on-dark-mute: rgba(247, 244, 239, 0.62); /* 文字：暗い面の上の、うすい文字 */
+  --c-on-light: #12100E;    /* 文字：明るい面の上に乗る文字（中身は暗い） */
+  --c-on-light-mute: rgba(18, 16, 14, 0.6);    /* 文字：明るい面の上の、うすい文字 */
 
   --f-display: "Playfair Display", "Noto Serif JP", serif;
   --f-body: "Noto Serif JP", "Hiragino Mincho ProN", serif;
@@ -325,4 +330,8 @@ figcaption {
   font-size: 0.75rem;
   color: var(--c-on-light-mute);
   line-height: 2;
+}
+.section-light .btn-primary {
+  background-color: var(--c-ink);
+  color: var(--c-on-dark);
 }
