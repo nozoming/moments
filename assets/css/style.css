@@ -434,3 +434,14 @@ footer small {
   font-size: 0.6875rem;
   color: var(--c-on-dark-mute);
 }
+.section-cta {
+  text-align: center;
+  border-top: 1px solid var(--c-accent);
+  border-bottom:1px solid var(--c-accent);
+}
+.cta-copy {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  line-height: 1.9;
+  color: var(--c-on-dark-mute);
+}
