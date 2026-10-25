@@ -481,6 +481,8 @@ footer small {
 }
   :root {
     --header-h:88px;
-
 }
+  .hero-overlay { 
+    background-image: linear-gradient(90deg, rgb(18 16 14 / 40%) 0%, rgb(18 16 14 / 0%) 100%);
+  }
 }
