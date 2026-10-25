@@ -190,10 +190,10 @@ Day 8（初めてのJS）と Day 14（レスポンシブ）は、細切れの時
 
 | 済 | Day | やること | 完了の目安 | 手本 |
 |---|---|---|---|---|
-| ×| 8 | **初めてのJS**。ドロワー開閉（`classList` と `aria-expanded`） | ボタンで開閉する | `main.js` 機能2 |
+|×| 8 | **初めてのJS**。ドロワー開閉（`classList` と `aria-expanded`） | ボタンで開閉する | `main.js` 機能2 |
 |x| 9 | ヒーロー。`min-height: 100svh`、画像の上に文字を重ねる | 画面いっぱいのヒーロー | `style.css` 07 |
-| | 10 | セクションの型と **`clamp()`** でのフォント可変。**見出しを英語表記に直す**（下記） | 幅を変えると文字が滑らかに変わる | `style.css` 08 |
-| | 11 | カードグリッド。`display: grid` と `repeat()` `gap`。Instagram枠もこれ | スマホ1列・PC3列 | `style.css` 09 |
+|x| 10 | セクションの型と **`clamp()`** でのフォント可変。**見出しを英語表記に直す**（下記） | 幅を変えると文字が滑らかに変わる | `style.css` 08 |
+|x| 11 | カードグリッド。`display: grid` と `repeat()` `gap`。Instagram枠もこれ | スマホ1列・PC3列 | `style.css` 09 |
 | | 12 | 画像。`aspect-ratio`・`object-fit`・`width`/`height`・`loading` | 比率が崩れずガタつかない | `.ratio--45` |
 | | 13 | フッター（SNSリンク）とスマホ固定CTAバー、お客様の声3件 | 下部に常時CTA | `style.css` 06 |
 | | 14 | **レスポンシブ**。`768px` と `1100px` の2箇所だけ | 375/768/1280で破綻しない | `style.css` 05 |
