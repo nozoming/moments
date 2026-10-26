@@ -311,6 +311,7 @@ figcaption {
 }
 .section-text .lead {
   margin-bottom: var(--sp-6);
+  max-width: 35em;
 }
 .section-text .btn {
   margin-top: var(--sp-4);
@@ -437,11 +438,15 @@ footer small {
   font-family: var(--f-caption);
   font-size: 0.6875rem;
   color: var(--c-on-dark-mute);
+  order: 2;
 }
 .footer-info,.footer-navi {
   display: flex;
   flex-direction: column;
   gap: var(--sp-6);
+}
+.footer-info {
+  order: 1;
 }
 .section-cta {
   text-align: center;
@@ -453,6 +458,22 @@ footer small {
   letter-spacing: 0.1em;
   line-height: 1.9;
   color: var(--c-on-dark-mute);
+}
+@media (min-width: 768px) {
+   .hero-buttons { 
+    flex-direction: row;
+}
+  .section-text .btn { 
+    align-self: center;
+  }
+    .plan { 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .voice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media (min-width: 1280px) { 
   #drawer-toggle {
@@ -495,23 +516,11 @@ footer small {
   .hero-overlay { 
     background-image: linear-gradient(90deg, rgb(18 16 14 / 40%) 0%, rgb(18 16 14 / 0%) 100%);
   }
-  .hero-buttons { 
-    flex-direction: row;
-
-  }
   .header-bar {
     padding-inline: var(--sp-9);
   }
   .hero-text {
     left: var(--sp-9);
-  }
-  .plan { 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .voice {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
   }
   .photo-grid {
     grid-template-columns: 1fr 1fr 1fr; 
@@ -522,9 +531,7 @@ footer small {
   .section-text {
     padding-inline: var(--sp-9);
   }
-  .section-text .btn { 
-    align-self: center;
-  }
+
   footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -534,5 +541,8 @@ footer small {
     grid-column: 1 / -1;
     border-top: solid 1px var(--c-ink-line);
     padding-top: var(--sp-6);
+  }
+  .footer-info {
+    order: 0;
   }
 }
