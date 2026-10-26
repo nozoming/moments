@@ -438,6 +438,11 @@ footer small {
   font-size: 0.6875rem;
   color: var(--c-on-dark-mute);
 }
+.footer-info,.footer-navi {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
 .section-cta {
   text-align: center;
   border-top: 1px solid var(--c-accent);
@@ -517,10 +522,17 @@ footer small {
   .section-text {
     padding-inline: var(--sp-9);
   }
-  footer {
-    padding-inline: var(--sp-9);
-  }
   .section-text .btn { 
     align-self: center;
+  }
+  footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-inline: var(--sp-9);
+  }
+  footer small {
+    grid-column: 1 / -1;
+    border-top: solid 1px var(--c-ink-line);
+    padding-top: var(--sp-6);
   }
 }
