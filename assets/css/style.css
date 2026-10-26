@@ -288,7 +288,7 @@ main {
   gap: var(--sp-4);
 }
 .section-text h2 {
-  font-size: 1.3rem;
+  font-size: clamp(1.3rem,2.5vw,2rem);
   margin-bottom: var(--sp-2);
   
 }
@@ -499,5 +499,28 @@ footer small {
   }
   .hero-text {
     left: var(--sp-9);
+  }
+  .plan { 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .voice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .photo-grid {
+    grid-template-columns: 1fr 1fr 1fr; 
+  }
+  .photo-grid figure:nth-child(4) {
+    display: none;
+  }
+  .section-text {
+    padding-inline: var(--sp-9);
+  }
+  footer {
+    padding-inline: var(--sp-9);
+  }
+  .section-text .btn { 
+    align-self: center;
   }
 }
