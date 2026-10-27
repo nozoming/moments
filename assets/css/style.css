@@ -392,6 +392,41 @@ figcaption {
   font-size: 0.6875rem;
   color: var(--c-on-dark-mute);
 }
+.journal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+}
+.journal article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.journal img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
+.journal-title {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+.journal-meta {
+  display: flex;
+  gap: var(--sp-3);
+  font-family: var(--f-label);
+  font-size: 0.6875rem;
+  letter-spacing: 0.24em;
+  color: var(--c-accent);
+}
+.journal time {
+  color: var(--c-accent);
+}
+.journal-text {
+  font-size: 0.8125rem;
+  line-height: 2;
+  color: var(--c-on-dark-mute);
+}
 footer {
   padding-block: var( --sp-8);
   padding-inline: var(--sp-6);
@@ -459,6 +494,16 @@ footer small {
   line-height: 1.9;
   color: var(--c-on-dark-mute);
 }
+.instagram {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: var(--sp-3);
+}
+.instagram img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
 @media (min-width: 768px) {
    .hero-buttons { 
     flex-direction: row;
@@ -474,7 +519,15 @@ footer small {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+  .instagram {
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+  }
+  .journal {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
+
 @media (min-width: 1280px) { 
   #drawer-toggle {
     display: none;
