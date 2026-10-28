@@ -105,7 +105,7 @@ WordPress のテンプレートは、**完成した HTML を切り分けて作�
 |---|---|---|---|---|
 | x | 18 | **Local でサイトを作る**。管理画面にログイン。投稿／固定ページ／テーマ／テンプレート階層を知る。テーマのソースをどこで管理するか決める | `http://moments.local/wp-admin/` が開く | — |
 | x | 19 | **自作テーマの最小構成**。`style.css` のヘッダーコメントと `index.php` だけ置いて有効化 | 自分の HTML が WordPress 経由で表示される | 静的版の `index.html` |
-| | 20 | `header.php` / `footer.php` に分割。`get_header()` / `get_footer()`、`wp_head()` / `wp_footer()` | 見た目が崩れずに3ファイルに分かれる | — |
+| x| 20 | `header.php` / `footer.php` に分割。`get_header()` / `get_footer()`、`wp_head()` / `wp_footer()` | 見た目が崩れずに3ファイルに分かれる | — |
 | | 21 | パスを直す。`get_template_directory_uri()`、`wp_enqueue_scripts` で CSS / JS を読み込む | 画像も CSS も JS も正しく出る | — |
 
 ## ページと CMS を作る — Day 22-25（〜11/9）
