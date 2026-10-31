@@ -28,6 +28,7 @@
 - [Day 21 — 道案内を直す・CSS と JS を届け出る](#day-21--道案内を直すcss-と-js-を届け出る)
 - [Day 22 — front-page.php と page.php で出し分ける](#day-22--front-pagephp-と-pagephp-で出し分ける)
 - [Day 23 — ナビをメニュー機能に](#day-23--ナビをメニュー機能に)
+- [Day 24 — ブログのループ・single.php・記事一覧](#day-24--ブログのループsinglephp記事一覧)
 
 ---
 
@@ -2304,11 +2305,111 @@ themes/moments/
 
 ---
 
+## Day 24 — ブログのループ・single.php・記事一覧
+
+### 3種類のページと型紙
+
+| ページ | URL | 型紙 | 記事はどうやって手に入れる？ |
+|---|---|---|---|
+| トップ | `moments.local/` | `front-page.php` | WordPress が用意するのは HOME ページ1つ → 記事は**自分で取りに行く**（`new WP_Query`） |
+| 記事一覧 | `moments.local/journal/` | `index.php` | WordPress が**記事を用意して待っている** → そのまま回す |
+| 記事1つ | `moments.local/dawn-dusk/` など | `single.php` | WordPress が**記事を1つ**用意している → `the_post()` で1回取り出す |
+
+- 型紙を作る前は、記事のページも一覧のページも**最後の受け皿の `index.php`** が使われていた（URL は変わるのに見た目がトップのまま）
+- 管理画面 **設定 → 表示設定** で「ホームページ＝HOME」「投稿ページ＝JOURNAL」と登録して、トップと一覧を分けた。HOME と JOURNAL は本文が空っぽの**札**
+- `index.php` は最後の受け皿だから、**記事の一覧**にしておくのがふつう。ページが見つからない（404）ときにもここが出る（`/plan/index.html` で実際に出た）
+
+---
+
+### ループの形
+
+```
+while ( まだ記事がある？ ) : 1つ取り出す;
+    1つ分の HTML
+endwhile;
+```
+
+| | トップ | 記事一覧 |
+|---|---|---|
+| 取りに行く | `$journal = new WP_Query( array( 'posts_per_page' => 3 ) )` | いらない |
+| 回す | `$journal->have_posts()` / `$journal->the_post()` | `have_posts()` / `the_post()` |
+| 終わり | `endwhile; wp_reset_postdata();`（借りたものを戻す） | `endwhile;` |
+
+- `$journal` は**入れ物**。`=` の右で取ってきた記事の束を入れておく
+- `posts_per_page` を書かない一覧は、表示設定の「1ページに表示する最大投稿数」（ふつう10）まで。いまは記事が3つなので3つ
+- 知らない名札（`posts_par_page`）は**エラーにならず黙って無視**される → 「効かない」ときはつづりを疑う
+- 並び順は何も書かなくても**新しい順**
+
+---
+
+### 記事に聞く命令
+
+| 出したいもの | 命令 | 自分で書くタグ |
+|---|---|---|
+| タイトル | `the_title()` | `<h3>` など |
+| 日付 | `echo get_the_date( 'Y.m.d' )` | `<time datetime="…">`（datetime は `'Y-m-d'`） |
+| 抜粋 | `echo get_the_excerpt()` | `<p>`（`the_excerpt()` は自分で `<p>` を付けるので二重になる） |
+| 写真 | `the_post_thumbnail()` | なし（**`<img>` まるごと**出る。alt も loading も WordPress が書く） |
+| カテゴリー | `the_category( ',' )` | なし（`<a>` が出る。`( )` が空だと `<ul><li>` になって `<p>` に入れられない） |
+| 記事の URL | `the_permalink()` | `<a href="…">`（URL の文字だけ出る） |
+| 本文 | `the_content()` | なし（段落ごとに `<p>` が出る） |
+
+- `the_〇〇` は自分で書き出す。`get_〇〇` は取ってくるだけなので **`echo`** が要る
+- 写真は先に `functions.php` で `add_theme_support( 'post-thumbnails' )`（「このテーマは写真に対応しています」という自己紹介）→ 編集画面に「アイキャッチ画像」の欄が出る
+- 写真がない記事では `the_post_thumbnail()` は何も出さない
+- 「`NEWS` と直接書く」「写真のファイル名を直接書く」と、管理画面で何を変えても全部同じになる。**記事に聞く**書き方にするのがループの意味
+- カテゴリーのリンク `<a>` が中にあるので、記事まるごとを `<a>` で包めない（`<a>` の中に `<a>` は入れられない）→ タイトルだけリンクにした。順番は `<h3><a>…</a></h3>`（箱の中に押せる文字）
+
+---
+
+### after_setup_theme はいつ？
+
+WordPress はページを開くたびに、決まった順番で仕事をしている。
+
+```
+① 本体を起動 → ② プラグインを読む → ③ テーマの functions.php を読む
+   ★ after_setup_theme（③が終わった合図）
+④ ログインの確認など → ⑤ どのページか調べて型紙を選ぶ → ⑥ 型紙を実行（wp_head の中で wp_enqueue_scripts）
+```
+
+- `add_action( 'after_setup_theme', 'moments_setup' )`：1つ目は WordPress が決めた合図の名前、2つ目は自分が付けたやることリストの名前（何でもいいが**2か所で同じ**にする）
+- メニューの枠と写真の対応は**テーマの自己紹介**なので、型紙を選ぶより前（③のすぐあと）にする
+
+---
+
+### 記事ページの見た目（single.php）
+
+- 中身を `<article class="post">` で包み、`.post` に `max-width: var(--wrap-narrow)`（820px）・`margin-inline: auto`・`padding-inline`・`padding-block` → `.container` とほぼ同じ形
+- 写真は `max-width: 100%` があるので、箱の幅に合わせて縮む（比率は 3:2 のまま＝自分で選んだ）
+- `display: flex; flex-direction: column; gap` で、写真・日付・見出し・本文の間を同じすき間にした（`.section-text` と同じ書き方）
+- 本文だけを `<div class="post-body">` で包んで `.post-body p` にした。`.post p` だと日付の `<p class="journal-meta">` にも当たり、しかも `.journal-meta`（class 1つ）より `.post p`（class 1つ＋タグ1つ）のほうが**強い**
+- `clamp( 最小, 伸び縮み, 最大 )`：PC で大きいときは3つ目を小さくする（2rem → 1.5rem にした）
+- フォントは `body` の `font-family` がページ全体に効いているので、何もしなくてもトップと同じ
+
+---
+
+### リンクを WordPress に作ってもらう
+
+- `<?php echo home_url( '/' ); ?>` → `http://moments.local/`。`( )` の中が「トップから見た行き先」
+- `href="index.html"` のままだと、`/plan/` から押したとき `/plan/index.html` に行ってしまう（ブラウザは「いまいる場所＋index.html」と読む）→ どこから押してもトップに戻れるようにした
+- WordPress の URL は最後が `/` で終わる形（`'/journal/'`）
+
+---
+
+### この日に自分で踏んで直したもの
+
+- `posts_par_page`（黙って無視されて Hello world! が残った）
+- 古い `<img src="` を消し残して `the_post_thumbnail()` をつないだ → `src="` が閉じず、Hello world! の日付とタイトルがのみこまれて見えなくなった
+- `NEWS` と一緒に `</time>` を消した → ブラウザは閉じタグを**推測して補う**が、場所は `</p>` の直前になり、`<a>` が `<time>` の中に入る
+- `<a href="…"` の `>` 忘れ・`<a>` が外で `<h3>` が中
+- `.post` を `.journal-text` の `{ }` の**中**に書いた（入れ子＝「〜の中の」の意味になり効かない）
+- `.post p` に Jost が入っていて本文のフォントが変わった（あとに書いた `.post-body p` に**書いていないもの**は前のルールが残る）
+- `class="post-body p"`（スペースで class が2つになる）
+- 一覧で `while  have_posts() the_post();`（`( )` と `:` を消した → Parse error「`(` が来るはずだよ」）・`endwhile();`（目じるしなので `( )` は付けない）
+
+---
+
 ## 今日出てきたが、まだ使っていない言葉
-
-### ループ
-
-棚から記事を1件ずつ取ってきて並べる命令。→ **Day 24**。Day 22 の `the_post()`（1冊だけ手にとる）を、くり返す形にしたもの。
 
 ### カスタム投稿タイプ
 
